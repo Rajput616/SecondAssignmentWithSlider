@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Second_Assignment.MainPage" 
+             >
+
+    <StackLayout Padding="20,20,20,20">
+        <Button
+                Text="Next" 
+                BackgroundColor="Cyan"
+                HorizontalOptions="Center" 
+                Padding="15,15,15,15"
+                Clicked="Button_Clicked"/>
+
+            <Label 
+                Text="{Binding Source={x:Reference slider},
+                      Path=Value,
+                      StringFormat='Font Size: {0:F0}'}"
+                FontSize="Medium"
+                TextColor="Black"
+                Padding="0,10,0,10"/>
+
+            <Slider 
+                x:Name="slider"
+                BackgroundColor="OldLace"
+                ThumbColor="#5434d4"
+                Maximum="50"
+                Minimum="16"
+                DragCompleted="slider_DragCompleted"/>
+
+
+            <Label 
+                x:Name="label"
+                TextColor="Black"
+               Text="Chirp Chirp"
+                FontSize="{Binding Source={x:Reference slider},
+                      Path=Value}"
+                Padding="0,10,0,10"/>
+
+    </StackLayout>
+    
+
+</ContentPage>
